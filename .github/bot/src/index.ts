@@ -300,13 +300,23 @@ async function main(): Promise<void> {
               ...errors.map((error, index) => `${index + 1}. ${error}`),
           ].join("\n");
 
-    await octokit.rest.pulls.createReview({
-        owner,
-        repo,
-        pull_number: pullNumber,
-        event: isValid ? "APPROVE" : "REQUEST_CHANGES",
-        body,
-    });
+    if (isValid) {
+        await octokit.rest.pulls.createReview({
+            owner,
+            repo,
+            pull_number: pullNumber,
+            event: "APPROVE",
+            body,
+        });
+    } else {
+        await octokit.rest.pulls.createReview({
+            owner,
+            repo,
+            pull_number: pullNumber,
+            event: "REQUEST_CHANGES",
+            body,
+        });
+    }
 
     console.log(
         isValid
