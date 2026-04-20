@@ -1,0 +1,25 @@
+{
+  "name": "packages",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The public index for Numo packages.",
+  "type": "module",
+  "scripts": {
+    "generate": "tsx ./scripts/generate.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numo-lang/packages.git"
+  },
+  "dependencies": {
+    "json-colorizer": "^3.0.1",
+    "picocolors": "^1.1.1",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/prompts": "^2.4.9",
+    "tsx": "^4.21.0"
+  }
+}
