@@ -1,0 +1,8 @@
+{
+  "name": "@notthebestdev/numo-test-package",
+  "version": "1.0.0",
+  "description": "Test if Numo can fetch this package",
+  "author": "notthebestdev",
+  "license": "MIT",
+  "repository": "https://github.com/notthebestdev/packages.git"
+}
