@@ -90,7 +90,7 @@ async function main(): Promise<void> {
 
     const semverRegex =
         /^(\d+\.)?(\d+\.)?(\*|\d+)(?:-([\da-z\-]+(?:\.[\da-z\-]+)*))?(?:\+([\da-z\-]+(?:\.[\da-z\-]+)*))?$/i;
-    const metaPathRegex = /^packages\/@([^/]+)\/([^/]+)\/meta\.json$/;
+    const metaPathRegex = /^(?:packages\/)?@([^/]+)\/([^/]+)\/meta\.json$/;
     const requiredFields = [
         "name",
         "version",
@@ -136,7 +136,7 @@ async function main(): Promise<void> {
 
     if (metaFiles.length === 0) {
         errors.push(
-            "No valid package metadata file found. Expected path: packages/@<author>/<package>/meta.json",
+            "No valid package metadata file found. Expected path: [packages/]@<author>/<package>/meta.json",
         );
     }
 
